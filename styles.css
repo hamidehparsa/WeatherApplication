@@ -1,0 +1,80 @@
+body {
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  background-image: url("images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.city-name {
+  font-weight: 500;
+  font-size: 64px;
+  text-transform: capitalize;
+}
+
+.date-time {
+  font-weight: 300;
+  font-size: 46px;
+}
+.city-field {
+  width: 400px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+button {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.current-temp {
+  font-size: 72px;
+  font-weight: 700;
+}
+
+h3 {
+  text-transform: capitalize;
+}
+
+#wind,
+#humidity {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.card-body {
+  font-size: 20px;
+  text-align: center;
+}
+
+.high-temp {
+  font-weight: 500;
+  margin-top: 10px;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+.low-temp {
+  margin-top: 0;
+}
+
+#celcius-btn,
+#farenheit-btn {
+  border-radius: 4px;
+  width: 40px;
+  background-color: gray;
+  color: white;
+}
