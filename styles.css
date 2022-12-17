@@ -78,3 +78,8 @@ h3 {
   background-color: gray;
   color: white;
 }
+
+#github-link {
+  display: block;
+  text-align: center;
+}
