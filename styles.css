@@ -10,13 +10,13 @@ body {
   background-position: center;
 }
 
-.city-name {
+#city-name {
   font-weight: 500;
   font-size: 64px;
   text-transform: capitalize;
 }
 
-.date-time {
+#date-time {
   font-weight: 300;
   font-size: 46px;
 }
@@ -71,8 +71,8 @@ h3 {
   margin-top: 0;
 }
 
-#celcius-btn,
-#farenheit-btn {
+#celcius-link,
+#farenheit-link {
   border-radius: 4px;
   width: 40px;
   background-color: gray;
