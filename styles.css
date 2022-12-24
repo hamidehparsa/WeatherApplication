@@ -84,10 +84,10 @@ h3 {
   text-decoration: none;
 }
 
-a.fahrenheit-link :active {
+#fahrenheit-link.active,
+#celsius-link.active {
   font-size: 24px;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 #github-link {
