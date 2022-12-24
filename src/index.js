@@ -24,13 +24,13 @@ function showCurrentTime() {
   ];
   let month = months[date.getMonth()];
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let weekday = days[date.getDay()];
   let day = date.getDate();
@@ -57,11 +57,17 @@ function showTemperature(response) {
   let windEl = document.querySelector("#wind");
   let humidityEl = document.querySelector("#humidity");
   let descriptionEl = document.querySelector("#description");
+  let iconEl = document.querySelector("#icon");
   cityEl.innerHTML = response.data.name;
   temperatureEl.innerHTML = `${Math.round(response.data.main.temp)}`;
-  windEl.innerHTML = `Wind: ${response.data.wind.speed} m/s`;
+  windEl.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   humidityEl.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   descriptionEl.innerHTML = response.data.weather[0].description;
+  iconEl.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconEl.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
 }
 
@@ -93,7 +99,6 @@ function showFahrenheit(event) {
 
 function showCelsius(event) {
   event.preventDefault();
-  alert(celsiusTemperature);
   let tempEl = document.querySelector("#temp");
   tempEl.innerHTML = Math.round(celsiusTemperature);
   celsiusEl.classList.add("active");
@@ -114,26 +119,3 @@ fahrenheitEL.addEventListener("click", showFahrenheit);
 
 let celsiusEl = document.querySelector("#celsius-link");
 celsiusEl.addEventListener("click", showCelsius);
-
-//let celciusBtn = document.querySelector("#celcius-btn");
-//celciusBtn.addEventListener("click", changeToCelcius);
-//let farenheitBtn = document.querySelector("#farenheit-btn");
-//farenheitBtn.addEventListener("click", changeToFarenheit);
-
-/*function changeToFarenheit(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  let tempFarenheit = Math.round(currentTemperature * 1.8 + 32);
-  temp.innerHTML = tempFarenheit;
-  let unit = document.querySelector("#unit");
-  unit.innerHTML = "°F";
-}*/
-
-/*function changeToCelcius(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp");
-  let tempCelcius = currentTemperature;
-  temp.innerHTML = tempCelcius;
-  let unit = document.querySelector("#unit");
-  unit.innerHTML = "°C";
-}*/
