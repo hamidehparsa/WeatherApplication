@@ -125,22 +125,16 @@ function showForecast(response) {
   forecastDay.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">${formatDay(day.dt)}</h5>
-            <img
-              class="temp-icon"
-              src="https://openweathermap.org/img/wn/${
-                day.weather[0].icon
-              }@2x.png""
-            />
-            <p class="card-text high-temp">${day.main.temp_max}°C</p>
-            <p class="card-text low-temp">${day.main.temp_min}°C</p>
-          </div>
+      `<div class="col" style="margin-left:120px">
+        <div class="forecastDate">${formatDay(day.dt)}</div>
+        <img src="https://openweathermap.org/img/wn/${
+          day.weather[0].icon
+        }@2x.png" width="40"/>
+        <div class="forecastTemp">
+          <p class="high-temp">${Math.round(day.main.temp_max)}°C</p>
+          <p class="low-temp">${Math.round(day.main.temp_min)}°C</p>
         </div>
-      </div>` +
-      `</div>`;
+      </div>`;
   });
 
   forecastEl.innerHTML = forecastHTML;
@@ -166,5 +160,3 @@ fahrenheitEL.addEventListener("click", showFahrenheit);
 
 let celsiusEl = document.querySelector("#celsius-link");
 celsiusEl.addEventListener("click", showCelsius);
-
-showForecast();

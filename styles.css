@@ -94,3 +94,7 @@ h3 {
   display: block;
   text-align: center;
 }
+
+.weather-forecast {
+  display: flex;
+}
